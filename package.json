@@ -1,0 +1,12 @@
+{
+  "name": "interface-for-ip",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "LinusU/interface-for-ip",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  }
+}
