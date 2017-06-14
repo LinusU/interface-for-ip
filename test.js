@@ -41,9 +41,6 @@ os.networkInterfaces = function () {
   }
 }
 
-// Localhost is internal
-assert.equal(interfaceForIp('127.0.0.1'), null)
-
 // Random addresses not present
 assert.equal(interfaceForIp('41.242.47.182'), null)
 assert.equal(interfaceForIp('161.129.29.194'), null)
@@ -55,6 +52,12 @@ assert.equal(interfaceForIp('224.198.27.164'), null)
 assert.equal(interfaceForIp('173.118.89.120'), null)
 assert.equal(interfaceForIp('212.188.143.124'), null)
 assert.equal(interfaceForIp('68.21.95.166'), null)
+
+// Addresses on lo0
+assert.equal(interfaceForIp('127.0.0.1').name, 'lo0')
+assert.equal(interfaceForIp('127.58.13.0').name, 'lo0')
+assert.equal(interfaceForIp('127.69.6.243').name, 'lo0')
+assert.equal(interfaceForIp('127.127.127.127').name, 'lo0')
 
 // Addresses on en0
 assert.equal(interfaceForIp('192.168.48.1').name, 'en0')

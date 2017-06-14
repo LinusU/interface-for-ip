@@ -35,7 +35,6 @@ module.exports = function interfaceForIp (ip) {
     iface = interfaces[key]
 
     for (var info of iface) {
-      if (info.internal) continue
       if (info.family !== 'IPv4') continue
 
       var address = parseIp(info.address)
